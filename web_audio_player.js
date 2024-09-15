@@ -56,7 +56,7 @@ CircularAudioBuffer.prototype.use = function() {
  * Web Audio Stuff
  */
 
-var SAMPLE_RATE = 44100;
+var SAMPLE_RATE = 48000;
 var BUFFER = 4096; // buffer sample
 var channels = 2;
 
@@ -69,7 +69,7 @@ var emptyBuffer;
 var audioIsInitted = false;
 
 function initAudio() {
-    audioCtx = new window.AudioContext();
+    audioCtx = new window.AudioContext({sampleRate:SAMPLE_RATE});
     scriptNode = audioCtx.createScriptProcessor(BUFFER, 0, channels);
     scriptNode.onaudioprocess = onAudioProcess;
 
