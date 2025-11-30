@@ -362,6 +362,7 @@ var files = evt.dataTransfer ? evt.dataTransfer.files : evt.target.files;
           input = document.createElement('input');
           input.style.display = 'none';
           input.type = 'file';
+          input.accept = ".mid,.midi,.MID,.MIDI"
           input.addEventListener('change', handleFileSelect);
           target = target || document.body;
           target.appendChild(input);
